@@ -1,4 +1,4 @@
-FROM huhongda/wdybase:0.3
+FROM huhongda/wdybase:0.4
 
 RUN groupadd -r redis && useradd -r -g redis redis
 RUN wget http://download.redis.io/releases/redis-2.8.18.tar.gz
