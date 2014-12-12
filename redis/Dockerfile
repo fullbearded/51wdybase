@@ -1,5 +1,7 @@
 FROM huhongda/wdybase:0.5
 
+MAINTAINER jerry <jerrery520@gmail.com>
+
 RUN groupadd -r redis && useradd -r -g redis redis
 RUN wget http://download.redis.io/releases/redis-2.8.18.tar.gz
 RUN mkdir -p /usr/local/redis
