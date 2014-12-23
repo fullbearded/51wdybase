@@ -1,3 +1,6 @@
 .idea
 /redis/data
 /mongodb/data
+*.log
+/nginx/sites
+/nginx/log
