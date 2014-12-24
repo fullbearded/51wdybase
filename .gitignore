@@ -4,3 +4,4 @@
 *.log
 /nginx/sites
 /nginx/log
+/mysql/data
