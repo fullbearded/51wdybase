@@ -1,0 +1,32 @@
+redis:
+  image: huhongda/redis:0.2
+  ports:
+    - "6379:6379"
+  volumes:
+    - "redis/data:/data"
+mongodb:
+  image: 'huhongda/mongodb:0.1'
+  ports:
+    - "27017:27017"
+mysql:
+  image: huhongda/mysql:0.1
+  ports:
+    - "3306:3306"
+php:
+  image: huhongda/php:0.2
+  volumes:
+    - 'nginx/sites:/var/www/sites:rw'
+  links:
+    - 'mysql'
+nginx:
+  image: huhongda/nginx:0.1
+  ports:
+    - "443:443"
+    - "80:80"
+  volumes:
+    - "nginx/configuration/sites-enabled:/etc/nginx/sites-enabled"
+    - "nginx/log:/var/log/nginx"
+  volumes_from:
+    - php
+  links:
+    - 'php:phpserver'
