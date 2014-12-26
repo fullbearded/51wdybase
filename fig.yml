@@ -8,6 +8,8 @@ mongodb:
   image: 'huhongda/mongodb:0.1'
   ports:
     - "27017:27017"
+  volumes:
+    - 'mongodb/data:/data'
 mysql:
   image: huhongda/mysql:0.1
   ports:
